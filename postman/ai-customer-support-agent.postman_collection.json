@@ -1,0 +1,186 @@
+{
+  "info": {
+    "_postman_id": "26c8381b-bee0-4d37-ad3c-b736e7ca9d1e",
+    "name": "ai-customer-support-agent",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "3913811"
+  },
+  "item": [
+    {
+      "name": "Priya_ChargedTwice",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "username",
+            "value": "yoram01"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "from",
+              "value": "priya.sharma@example.com",
+              "type": "text"
+            },
+            {
+              "key": "subject",
+              "value": "Charged twice for order 4471",
+              "type": "text"
+            },
+            {
+              "key": "body",
+              "value": "Hi, I was charged twice for my order 4471 — I see two charges of  $199.99 on my card. Please refund the duplicate",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/seed-mail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "seed-mail"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sarah_Escalation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "username",
+            "value": "yoram01"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "from",
+              "value": "sarah.mitchell@example.com",
+              "type": "text"
+            },
+            {
+              "key": "subject",
+              "value": "What's wrong with you guys",
+              "type": "text"
+            },
+            {
+              "key": "body",
+              "value": "For the third time in a row, I received a blender with a cracked jug. I no more want to take this stress. Give me my money back",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/seed-mail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "seed-mail"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rohan_Hindi_Sarcastic",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "username",
+            "value": "yoram01"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "from",
+              "value": "rohan.verma@example.com",
+              "type": "text"
+            },
+            {
+              "key": "subject",
+              "value": "Wah, kya service hai",
+              "type": "text"
+            },
+            {
+              "key": "body",
+              "value": " Wah, kya kamaal ka service hai. My BrewWell kettle from order #4502 stopped heating after exactly one week — paisa vasool, truly. \n  ▎ Aur waise bhi, jab aap is \"premium\" quality ko sambhal hi rahe ho, the HushMix hand mixer in the same box sounds like a cement \n  ▎ mixer, bilkul bhi \"quiet\" nahi hai jaisa aapne apne website pe likha tha. Do me a favour and sort both out, warna agli baar main \n  ▎ seedha review likhne wala hoon. Thanks a ton. 🙏",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/seed-mail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "seed-mail"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UnknownCustomer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "username",
+            "value": "yoram01"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "from",
+              "value": "madan@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "subject",
+              "value": "Warranty of ZenFlow Yoga Mat",
+              "type": "text"
+            },
+            {
+              "key": "body",
+              "value": "What is the warranty of ZenFlow Yoga Mat ? I am considering to buy",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/seed-mail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "seed-mail"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
