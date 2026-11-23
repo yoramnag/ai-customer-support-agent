@@ -1,4 +1,3 @@
-
 # AI-Powered Customer Support Agent
 
 **An AI-driven, email-based customer support demonstration using Java, Spring Boot, Spring AI, OpenAI, and the Model Context Protocol (MCP).**
@@ -14,7 +13,7 @@ This repository is the **documentation and demo hub** for two independent Spring
 | **Spring AI Support Agent** | **[yoramnag/support-agent](https://github.com/yoramnag/support-agent)** | Polls emails, uses OpenAI through Spring AI `ChatClient`, calls MCP tools, and generates email replies. |
 | **Spring Boot MCP Server** | **[yoramnag/mcp-server](https://github.com/yoramnag/mcp-server)** | Exposes tools for querying and updating customer, order, payment, product, warranty, and support-ticket information in MySQL. |
 
-**This repository contains only:** shared documentation, a Postman collection, and demonstration screenshots.
+**This repository contains only:** shared documentation, a Postman collection, an architecture diagram, and demonstration screenshots.
 
 ## System architecture
 
@@ -138,6 +137,20 @@ docker run -d --name mailpit -p 1025:1025 -p 8025:8025 axllent/mailpit
 
 Visit **http://localhost:8025**. If a Mailpit container already exists, start/reuse it rather than creating another one.
 
+### Verify the local containers in Docker Desktop
+
+Open **Docker Desktop → Containers** and confirm that **Mailpit** and **MySQL (`support-agent-mysql`)** show a running status (green indicator).
+
+![Docker Desktop showing Mailpit and MySQL containers running](docs/screenshots/docker-desktop-containers.png)
+
+*Docker Desktop demo environment with Mailpit and MySQL running. The `mcp-server` entry shown in the screenshot is a Docker Compose project grouping; the Java MCP server and Spring AI agent are started separately in the following steps.*
+
+You can also check the containers from PowerShell:
+
+```powershell
+docker ps
+```
+
 ### 4. Run the MCP server
 
 In the `mcp-server` directory:
@@ -217,7 +230,8 @@ ai-customer-support-agent/
 ├── docs/
 │   ├── architecture.svg
 │   └── screenshots/
-│       └── mailpit-inbox.png
+│       ├── mailpit-inbox.png
+│       └── docker-desktop-containers.png
 ├── postman/
 │   └── ai-customer-support-agent.postman_collection.json
 └── .gitignore
