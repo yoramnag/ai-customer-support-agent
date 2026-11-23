@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI-Powered Customer Support Agent — System Architecture</title>
+  <desc id="desc">A customer emails Mailpit. A Spring Boot scheduler polls the mailbox and passes messages to a Spring AI agent. The agent uses an OpenAI model and a Streamable HTTP MCP client to call an independent MCP server with MySQL-backed tools. The agent sends a contextual email reply through Mailpit SMTP.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#eff5ff"/></linearGradient>
+    <linearGradient id="agent" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e9f0ff"/><stop offset="1" stop-color="#dce9ff"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="7" stdDeviation="12" flood-color="#1b3760" flood-opacity=".09"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5275a8"/></marker>
+    <marker id="greenArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#079176"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1490" cy="120" r="210" fill="#dbe9ff" opacity=".48"/>
+  <circle cx="15" cy="860" r="220" fill="#e1fff5" opacity=".5"/>
+  <text x="70" y="82" font-size="43" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#152641">AI-Powered Customer Support Agent</text>
+  <text x="72" y="125" font-size="21" font-family="Arial, Helvetica, sans-serif" fill="#63758e">Java 17  ·  Spring Boot 4  ·  Spring AI  ·  MCP  ·  OpenAI  ·  MySQL  ·  Mailpit</text>
+  <rect x="70" y="161" width="1456" height="2" fill="#dbe4f1"/>
+
+  <!-- Main system cards -->
+  <g filter="url(#shadow)">
+    <rect x="62" y="288" width="218" height="187" rx="22" fill="#ffffff" stroke="#d7e1ee"/>
+    <rect x="345" y="288" width="240" height="187" rx="22" fill="#ffffff" stroke="#d7e1ee"/>
+    <rect x="664" y="237" width="445" height="339" rx="26" fill="url(#agent)" stroke="#9ab8ef" stroke-width="2"/>
+    <rect x="1194" y="288" width="325" height="187" rx="22" fill="#ffffff" stroke="#d7e1ee"/>
+    <rect x="1194" y="626" width="325" height="153" rx="22" fill="#ffffff" stroke="#d7e1ee"/>
+    <rect x="705" y="654" width="365" height="125" rx="22" fill="#ffffff" stroke="#c8dcf5"/>
+  </g>
+
+  <!-- Customer -->
+  <circle cx="171" cy="348" r="25" fill="#e6edff" stroke="#7695d6" stroke-width="2"/>
+  <path d="M126 396c0-26 19-43 45-43s45 17 45 43" fill="none" stroke="#7695d6" stroke-width="8" stroke-linecap="round"/>
+  <text x="171" y="435" text-anchor="middle" font-size="25" font-weight="700" fill="#1c3554" font-family="Arial">Customer</text>
+  <text x="171" y="458" text-anchor="middle" font-size="15" fill="#687f9b" font-family="Arial">Sends support request</text>
+
+  <!-- Mailpit -->
+  <rect x="431" y="328" width="68" height="47" rx="7" fill="#f0fcf8" stroke="#20a689" stroke-width="3"/>
+  <path d="M431 332l34 26 34-26" stroke="#20a689" stroke-width="3" fill="none"/>
+  <text x="465" y="420" text-anchor="middle" font-size="25" font-weight="700" fill="#1c3554" font-family="Arial">Mailpit</text>
+  <text x="465" y="445" text-anchor="middle" font-size="16" fill="#687f9b" font-family="Arial">Email inbox + SMTP</text>
+
+  <!-- Spring AI panel -->
+  <rect x="691" y="259" width="139" height="31" rx="15" fill="#2456bc"/>
+  <text x="761" y="280" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" font-family="Arial">SPRING AI APP</text>
+  <circle cx="739" cy="362" r="35" fill="#ffffff" stroke="#91ade4" stroke-width="2"/>
+  <path d="M719 365c10-11 14-13 20-13s11 2 20 13m-34 6c9 8 20 8 29 0" stroke="#2864c5" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="726" cy="347" r="3" fill="#2864c5"/><circle cx="752" cy="347" r="3" fill="#2864c5"/>
+  <text x="794" y="355" font-size="26" font-weight="700" fill="#17355e" font-family="Arial">Support Agent</text>
+  <text x="794" y="383" font-size="17" fill="#4e6b97" font-family="Arial">Spring AI ChatClient</text>
+  <line x1="697" y1="420" x2="1076" y2="420" stroke="#b5caef" stroke-width="2"/>
+  <text x="700" y="453" font-size="18" fill="#285083" font-family="Arial">Email polling  ·  every 10 seconds</text>
+  <text x="700" y="484" font-size="18" fill="#285083" font-family="Arial">LLM reasoning + tool calling</text>
+  <text x="700" y="515" font-size="18" fill="#285083" font-family="Arial">Structured reply + operator summary</text>
+  <rect x="697" y="536" width="370" height="25" rx="12" fill="#ffffff" opacity=".7"/>
+  <text x="882" y="554" text-anchor="middle" font-size="13" font-weight="600" fill="#4a6490" font-family="Arial">Application service · localhost:8080</text>
+
+  <!-- MCP server -->
+  <rect x="1231" y="313" width="80" height="29" rx="8" fill="#edeaff"/>
+  <text x="1271" y="333" text-anchor="middle" font-size="15" font-weight="700" fill="#6850c1" font-family="Arial">MCP</text>
+  <text x="1231" y="381" font-size="27" font-weight="700" fill="#1c3554" font-family="Arial">MCP Server</text>
+  <text x="1231" y="411" font-size="16" fill="#687f9b" font-family="Arial">8 query tools · 2 action tools</text>
+  <text x="1231" y="435" font-size="15" fill="#687f9b" font-family="Arial">Spring Boot · localhost:8090</text>
+
+  <!-- Database -->
+  <ellipse cx="1250" cy="679" rx="28" ry="9" fill="#d9f4ed" stroke="#18a586" stroke-width="2"/>
+  <path d="M1222 679v42c0 12 56 12 56 0v-42" fill="#d9f4ed" stroke="#18a586" stroke-width="2"/>
+  <path d="M1222 694c0 12 56 12 56 0m-56 14c0 12 56 12 56 0" fill="none" stroke="#18a586" stroke-width="2"/>
+  <text x="1302" y="686" font-size="26" font-weight="700" fill="#1c3554" font-family="Arial">MySQL</text>
+  <text x="1302" y="716" font-size="15" fill="#687f9b" font-family="Arial">Customers, orders,</text>
+  <text x="1302" y="737" font-size="15" fill="#687f9b" font-family="Arial">payments, tickets</text>
+
+  <!-- LLM card -->
+  <circle cx="763" cy="715" r="30" fill="#f0eaff" stroke="#b7a2ec" stroke-width="2"/>
+  <path d="M750 715c-5-8 0-17 8-18 5-9 17-6 20 1 10 1 13 15 5 21 3 10-7 17-16 13-11 5-21-3-17-17z" fill="none" stroke="#7755c4" stroke-width="3"/>
+  <text x="806" y="714" font-size="23" font-weight="700" fill="#1c3554" font-family="Arial">OpenAI LLM</text>
+  <text x="806" y="741" font-size="15" fill="#687f9b" font-family="Arial">Reasoning and response generation</text>
+
+  <!-- Connectors and small numeric labels -->
+  <path d="M280 376H345" fill="none" stroke="#5275a8" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="295" y="337" width="34" height="25" rx="12" fill="#e3ecff"/><text x="312" y="355" text-anchor="middle" font-size="15" font-weight="700" fill="#2456bc" font-family="Arial">1</text>
+  <text x="311" y="321" text-anchor="middle" font-size="14" fill="#5275a8" font-family="Arial">Email</text>
+
+  <path d="M585 376H664" fill="none" stroke="#5275a8" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="607" y="337" width="34" height="25" rx="12" fill="#e3ecff"/><text x="624" y="355" text-anchor="middle" font-size="15" font-weight="700" fill="#2456bc" font-family="Arial">2</text>
+  <text x="623" y="321" text-anchor="middle" font-size="14" fill="#5275a8" font-family="Arial">Poll</text>
+
+  <path d="M1109 376H1194" fill="none" stroke="#5275a8" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="1126" y="337" width="34" height="25" rx="12" fill="#e3ecff"/><text x="1143" y="355" text-anchor="middle" font-size="15" font-weight="700" fill="#2456bc" font-family="Arial">4</text>
+  <text x="1152" y="319" text-anchor="middle" font-size="14" fill="#5275a8" font-family="Arial">MCP HTTP</text>
+
+  <path d="M886 576V654" fill="none" stroke="#5275a8" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="899" y="594" width="34" height="25" rx="12" fill="#e3ecff"/><text x="916" y="612" text-anchor="middle" font-size="15" font-weight="700" fill="#2456bc" font-family="Arial">3</text>
+
+  <path d="M1356 475V626" fill="none" stroke="#5275a8" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="1371" y="543" width="34" height="25" rx="12" fill="#e3ecff"/><text x="1388" y="561" text-anchor="middle" font-size="15" font-weight="700" fill="#2456bc" font-family="Arial">5</text>
+  <text x="1415" y="526" text-anchor="middle" font-size="14" fill="#5275a8" font-family="Arial">DB access</text>
+
+  <path d="M664 520H465V475" fill="none" stroke="#079176" stroke-width="3.5" stroke-linejoin="round" marker-end="url(#greenArrow)"/>
+  <rect x="526" y="531" width="34" height="25" rx="12" fill="#d8f7ed"/><text x="543" y="549" text-anchor="middle" font-size="15" font-weight="700" fill="#00876f" font-family="Arial">6</text>
+  <text x="570" y="555" font-size="15" fill="#00876f" font-family="Arial">Reply via SMTP</text>
+
+  <rect x="70" y="819" width="1455" height="48" rx="13" fill="#e6eefb"/>
+  <text x="95" y="849" font-size="17" fill="#3f5e88" font-family="Arial">Workflow: receive email → poll inbox → reason with LLM → call MCP tools → read/write data → send customer reply</text>
+</svg>
